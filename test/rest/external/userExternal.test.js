@@ -1,6 +1,6 @@
 const request = require('supertest');
 const { expect } = require('chai');
-const { faker } = require('@faker-js/faker');
+const faker = require('faker');
 const app = require('../../../rest/app.js');
 
 
@@ -9,7 +9,7 @@ describe('EXTERNAL TESTS USER', () => {
         await request(app)
         .post('/api/users/register')
         .send({
-            name: faker.person.fullName(),
+            name: faker.name.findName(),
             email: 'teste@emailrepetido.com',
             password: "11111"
 
@@ -18,7 +18,7 @@ describe('EXTERNAL TESTS USER', () => {
     const response = await request(app)
         .post('/api/users/register')
         .send({
-            name: faker.person.fullName(),
+            name: faker.name.findName(),
             email: 'teste@emailrepetido.com',
             password: "11111"
 
@@ -33,9 +33,9 @@ describe('EXTERNAL TESTS USER', () => {
     const response = await request(app)
         .post('/api/users/login')
         .send({
-            name: faker.person.fullName(),
+            name: faker.name.findName(),
             email: faker.internet.email(),
-            password: faker.string.numeric(6)
+            password: String(faker.random.number({ min: 100000, max: 999999 }))
         });
 
     expect(response.status).to.equal(401);
@@ -43,13 +43,13 @@ describe('EXTERNAL TESTS USER', () => {
     });
 
     it('Criar e logar com um novo usuário com sucesso', async () => {
-        const password =  faker.string.numeric(6);
+        const password =  String(faker.random.number({ min: 100000, max: 999999 }));
         const email = faker.internet.email();
 
         const responseRegister = await request(app)
         .post('/api/users/register')
         .send({
-            name: faker.person.fullName(),
+            name: faker.name.findName(),
             email: email,
             password: password
         });

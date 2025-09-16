@@ -2,7 +2,7 @@
 const request = require('supertest');
 const sinon = require('sinon');
 const { expect } = require('chai');
-const { faker } = require('@faker-js/faker');
+const faker = require('faker');
 const app = require('../../../rest/app.js');
 const userService = require('../../../src/services/userService.js');
 
@@ -14,7 +14,7 @@ describe('TEST USER CONTROLLER', () => {
     it('Mock: registro de usuário com sucesso', async () => {
         const userMock = {
             id: 1,
-            name: faker.person.fullName(),
+            name: faker.name.findName(),
             email: faker.internet.email()
         };
         sinon.stub(userService, 'registerUser').returns(userMock);
