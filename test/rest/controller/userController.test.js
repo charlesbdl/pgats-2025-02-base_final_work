@@ -2,7 +2,7 @@
 const request = require('supertest');
 const sinon = require('sinon');
 const { expect } = require('chai');
-const { faker } = require('@faker-js/faker');
+import { faker } from '@faker-js/faker';
 const app = require('../../../rest/app.js');
 const userService = require('../../../src/services/userService.js');
 
