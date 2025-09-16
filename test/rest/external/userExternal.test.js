@@ -1,6 +1,6 @@
 const request = require('supertest');
 const { expect } = require('chai');
-import { faker } from '@faker-js/faker';
+const { faker } = require('@faker-js/faker');
 const app = require('../../../rest/app.js');
 
 
