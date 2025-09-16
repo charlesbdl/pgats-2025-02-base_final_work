@@ -216,3 +216,10 @@ Acesse o playground GraphQL em [http://localhost:4000/graphql](http://localhost:
 ## Documentação
 - Swagger disponível em `/api-docs`
 - Playground GraphQL disponível em `/graphql`
+
+## Como rodar os testes
+
+1. Instale as dependências de desenvolvimento:
+
+```bash
+npm install --save-dev mocha chai supertest sinon @faker-js/faker
