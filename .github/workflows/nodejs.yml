@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Testes autamatizados REST/GRAPHQL
 
 on:
   push:

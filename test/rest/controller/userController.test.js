@@ -11,6 +11,7 @@ describe('TEST USER CONTROLLER REST', () => {
     afterEach(() => {
         sinon.restore();
     });
+    
     it('Mock: registro de usuário com sucesso', async () => {
         const userMock = {
             id: 1,
@@ -29,8 +30,6 @@ describe('TEST USER CONTROLLER REST', () => {
         expect(resposta.status).to.equal(201);
         expect(resposta.body.user).to.include({ name: userMock.name, email: userMock.email }); 
        });
-
-
 
     it('Mock: autenticação de usuário com sucesso', async () => {
         const tokenMock = 'mocked-jwt-token';
