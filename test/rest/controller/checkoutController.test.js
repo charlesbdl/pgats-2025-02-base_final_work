@@ -7,7 +7,7 @@ const userService = require('../../../src/services/userService.js');
 
 const app = require('../../../rest/app.js');
 
-describe('TEST CHECKOUT CONTROLLER ', () => {
+describe('TEST CHECKOUT CONTROLLER REST ', () => {
         it('Mock: Quando moco service para retornar o erro: Produto não encontrado', async () => {
             sinon.stub(userService, 'verifyToken').returns({ id: 1, name: 'mock user' });
             const token = 'fake-token';

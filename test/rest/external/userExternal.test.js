@@ -4,7 +4,7 @@ const faker = require('faker');
 const app = require('../../../rest/app.js');
 
 
-describe('EXTERNAL TESTS USER', () => {
+describe('EXTERNAL TESTS USER REST', () => {
     it('Não permite registro de usuários com  mesmo email', async () => {
         await request(app)
         .post('/api/users/register')

@@ -7,7 +7,7 @@ const app = require('../../../rest/app.js');
 const userService = require('../../../src/services/userService.js');
 
 
-describe('TEST USER CONTROLLER', () => {
+describe('TEST USER CONTROLLER REST', () => {
     afterEach(() => {
         sinon.restore();
     });

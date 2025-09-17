@@ -5,7 +5,7 @@ const { expect } = require('chai');
 const app = require('../../../rest/app.js');
 
 
-describe('EXTERNAL TESTS CHECKOUT ', () => {
+describe('EXTERNAL TESTS CHECKOUT REST ', () => {
         it('Quando logo com um usuário válido mas preencho valores invalidos na requisição do checkout', async () => {
             let token;
 
